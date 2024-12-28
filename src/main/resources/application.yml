@@ -1,0 +1,34 @@
+server:
+  port: 8092
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  liquibase:
+    enabled: true
+    change-log: classpath:changelog/db.changelog-master.yaml
+
+bot:
+  telegram-api: https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s
+  token: 2070228409:AAH5sOZ_tbstAwYTIVSoxjI8z26UtL639DA
+car:
+  param:
+    maintenance:
+      schedule: 10
+      total: 200
+      reminder: 5
+
+car-maintenance:
+  api:
+    baseurl: /api/maintenance
+    sub-path:
+      id: /api/maintenance/{id}
+
+schedule:
+  delay:
+    init: 0
+    fixed: 10000
+
